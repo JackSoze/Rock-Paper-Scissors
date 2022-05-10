@@ -57,15 +57,16 @@ function game() {
     }
     console.log (playerWins)
     console.log (computerWins)
+    return winner(playerWins,computerWins)
 }
 
 console.log(game())
 
 function winner(playerWins,computerWins){
     if (playerWins>computerWins) {
-        console.log('the player wins')
+       return ('the player wins')
     } else {
-        console.log('the computer wins')
+        return ('the computer wins')
     }
 }
 

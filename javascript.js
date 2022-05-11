@@ -8,11 +8,9 @@ var choices = [
 
 function computerPlay() {
     let play = (choices[Math.floor(Math.random() * choices.length)]);
-    return play         //returns the string: rock,paper or scissors
+    return play         //returns a choice: rock,paper or scissors
 }
 
-let playerSelection = 'rock'
-console.log(`the player played ${playerSelection}`)
 
 function gameRound(playerSelection, computerSelection) {
     if ((playerSelection == 'rock') && (computerSelection == 'rock')) {
@@ -41,7 +39,7 @@ function game() {
     let playerWins = 0;
     let computerWins = 0;
     for (i = 0; i < 5; i++) {
-        let computerSelection = computerPlay(); //will be called with each loop
+        let computerSelection = computerPlay(); //declared again so it can be called with each loop
         let playerSelection = prompt('whats your input',).toLowerCase()  //same here
         let result = (gameRound(playerSelection, computerSelection));
         if (result == 'player wins') {
@@ -53,8 +51,6 @@ function game() {
         } else {
             console.log('tie')
         }
-
-
     }
     console.log(`player wins: ${playerWins}`)
     console.log(`computer wins: ${computerWins}`)

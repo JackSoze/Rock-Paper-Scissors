@@ -1,4 +1,5 @@
 console.log('hello world');
+alert('check the results in the console for now')
 var choices = [
     'rock',
     'paper',
@@ -55,8 +56,8 @@ function game() {
         
 
     }
-    console.log (playerWins)
-    console.log (computerWins)
+    console.log (`player wins: ${playerWins}`)
+    console.log (`computer wins: ${computerWins}`)
     return winner(playerWins,computerWins)
 }
 

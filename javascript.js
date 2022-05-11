@@ -8,7 +8,7 @@ var choices = [
 
 function  computerPlay() {
     let play = (choices[Math.floor(Math.random()*choices.length)]); 
-    return play
+    return play //returns the string: rock,paper or scissors
 }
 
 let playerSelection = 'rock'
@@ -41,7 +41,7 @@ function game() {
     let playerWins = 0;
     let computerWins = 0;
     for (i=0; i<5; i++) {
-        let computerSelection = computerPlay();
+        let computerSelection = computerPlay(); //need to be called again as loop part
         let playerSelection = prompt('whats your input', ).toLowerCase()
         let result = (gameRound(playerSelection,computerSelection));
         if (result=='player wins'){
@@ -58,7 +58,7 @@ function game() {
     }
     console.log (`player wins: ${playerWins}`)
     console.log (`computer wins: ${computerWins}`)
-    return winner(playerWins,computerWins)
+    return winner(playerWins,computerWins) //winner() defined below
 }
 
 console.log(game())

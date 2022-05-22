@@ -62,9 +62,9 @@ buttons.forEach(button=>
     computerWins.textContent = `computer wins: ${computerwins}`;
 
     if (playerwins>computerwins) {
-        gameWinner = 'player'
+        gameWinner = 'PLAYER, reload page to play again'
     }   else {
-        gameWinner = 'computer'
+        gameWinner = 'COMPUTER, reload page to play again'
     }
     
 }) )

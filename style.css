@@ -3,9 +3,10 @@ body {
     display: flex;
     flex-flow: column nowrap;
     flex: 1;
+    margin: 0px;
 }
 
-.header {
+#header {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -16,7 +17,7 @@ body {
     padding-bottom: 100px;
 }
 
-.gamePlay {
+#gamePlay {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -24,13 +25,22 @@ body {
     flex-flow: row wrap;
 }
 
-.results {
+#results {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     background-color: #1f2937;
     padding: 50px 0px;
     color: #E5E7EB;
     font-size: 18px;
+}
+
+button {
+    background-color: #3882f6;
+    padding: 5px 30px;
+    height: 39px;
+    border: white solid 2px;
+    color: white;
+    border-radius: 10px;
 }

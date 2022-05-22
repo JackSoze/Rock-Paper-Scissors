@@ -1,5 +1,5 @@
 console.log('hello world');
-alert('check the results in the console for now')
+
 var choices = [
     'rock',
     'paper',
@@ -11,12 +11,16 @@ function computerPlay() {
     return play         //returns a choice: rock,paper or scissors
 }
 
+let computerSelection = computerPlay();
+let playerwins = 0;
+let computerwins = 0;
+
 
 function gameRound(playerSelection, computerSelection) {
     if ((playerSelection == 'rock') && (computerSelection == 'rock')) {
         return ('tie')
     } else if ((playerSelection == 'rock') && (computerSelection == 'paper')) {
-        return ('computer wins')
+        return ('player wins')
     } else if ((playerSelection == 'rock') && (computerSelection == 'scissors')) {
         return ('player wins')
     } else if ((playerSelection == 'paper') && (computerSelection == 'rock')) {
@@ -35,34 +39,65 @@ function gameRound(playerSelection, computerSelection) {
 } 
 
 
-function playGame() {
-    let playerWins = 0;
-    let computerWins = 0;
-    for (i = 0; i < 5; i++) {
-        let computerSelection = computerPlay(); //declared again so it can be called with each loop
-        let playerSelection = prompt('whats your input',).toLowerCase()  //same here
-        let result = (gameRound(playerSelection, computerSelection));
-        if (result == 'player wins') {
-            console.log('player')
-            playerWins = playerWins + 1;
-        } else if (result == 'computer wins') {
-            console.log('computer')
-            computerWins = computerWins + 1;
-        } else {
-            console.log('tie')
-        }
-    }
-    console.log(`player wins: ${playerWins}`)
-    console.log(`computer wins: ${computerWins}`)
+const buttons = document.querySelectorAll('button');
 
-    let winner = function () {
-        return ((playerWins > computerWins) ? 'the player wins' : 'the computer wins')
+buttons.forEach(button=> 
+    button.addEventListener('click', function(e) {
+    if ((playerwins==5)||(computerwins==5)) {
+        winner.textContent = `the winner is : ${playWinner}`
+        return;  
     }
+    playerSelection = e.target.id;
+    console.log(playerSelection);
+    computerSelection = computerPlay();
+    console.log(computerSelection);
+    if (gameRound(playerSelection,computerSelection)=='player wins') {
+        playerwins++
+    } else if (gameRound(playerSelection,computerSelection)=='computer wins') {
+        computerwins++
+    } else alert ('round was a tie')
+    playerWins.textContent =`player wins: ${playerwins}`;
+    computerWins.textContent = `computer wins: ${computerwins}`;
+    
+}) )
 
-    return winner(playerWins, computerWins) 
+let playWinner = ''
+
+if (playerwins>computerwins) {
+    playWinner = 'player'
+}   else {
+    playWinner = 'computer'
 }
 
-console.log(playGame())
+
+console.log(playerwins);
+console.log(computerwins);
+
+const header = document.querySelector('#header')
+const results = document.querySelector('#results');
+
+const declaration = document.createElement('div');
+declaration.classList.add('declaration')
+declaration.textContent = 'the results are as follows:'
+results.appendChild(declaration);
+
+const playerWins = document.createElement('div');
+playerWins.classList.add('playerWins');
+
+results.appendChild(playerWins);
+
+const computerWins = document.createElement('div');
+computerWins.classList.add('computerWins');
+
+results.appendChild(computerWins);
+
+const winner = document.createElement('div');
+winner.classList.add('winner');
+winner.textContent = 'the winner is: '
+header.appendChild(winner);
+
+
+
 
 
 

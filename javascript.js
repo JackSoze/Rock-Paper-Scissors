@@ -32,10 +32,10 @@ function gameRound(playerSelection, computerSelection) {
     } else if ((playerSelection == 'scissors') && (computerSelection == 'scissors')) {
         return ('tie')
     }
-}
+} 
 
 
-function game() {
+function playGame() {
     let playerWins = 0;
     let computerWins = 0;
     for (i = 0; i < 5; i++) {
@@ -62,7 +62,7 @@ function game() {
     return winner(playerWins, computerWins) 
 }
 
-console.log(game())
+console.log(playGame())
 
 
 

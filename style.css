@@ -1,0 +1,36 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #1F2937;
+    color: aliceblue;
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+.gamePlay {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 100px 0px;
+    flex-flow: row wrap;
+}
+
+.results {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f2937;
+    padding: 50px 0px;
+    color: #E5E7EB;
+    font-size: 18px;
+}
